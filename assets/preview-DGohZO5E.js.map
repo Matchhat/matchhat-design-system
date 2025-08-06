@@ -1,0 +1,1 @@
+{"version":3,"file":"preview-DGohZO5E.js","sources":["../../.storybook/preview.ts"],"sourcesContent":["import '../src/tailwind.css';\n\nexport const parameters = {\n  layout: 'centered',\n};\n"],"names":["parameters"],"mappings":"AAEO,MAAMA,EAAa,CACxB,OAAQ,UACV"}
