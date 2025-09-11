@@ -1,69 +1,95 @@
-# React + TypeScript + Vite
+# MatchHat Design System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A reusable, scalable, and accessible design system for building consistent user interfaces across MatchHat products. Built with React, TypeScript, Tailwind CSS, and Storybook.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Component Library:** A comprehensive set of UI components (buttons, forms, modals, navigation, etc.)
+- **Theming:** Easily customizable with Tailwind CSS.
+- **Accessibility:** Components follow accessibility best practices.
+- **Documentation:** Interactive documentation and examples via Storybook.
+- **TypeScript Support:** Fully typed components for better developer experience.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Install the package using your preferred package manager:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install @matchhat/design-system
+# or
+yarn add @matchhat/design-system
+# or
+pnpm add @matchhat/design-system
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Import components into your project:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```tsx
+import { Button, Input, Modal } from '@matchhat/design-system';
+
+function App() {
+  return (
+    <div>
+      <Button>Click me</Button>
+      <Input placeholder="Type here..." />
+      <Modal isOpen={true}>Hello, world!</Modal>
+    </div>
+  );
+}
 ```
+
+### Tailwind CSS
+
+Make sure your project is set up with Tailwind CSS. You can customize the design system by extending the Tailwind config.
+
+### Storybook
+
+To view and interact with all components:
+
+```bash
+npm run storybook
+```
+
+## Folder Structure
+
+```
+src/
+  components/
+    ui/
+      button/
+      input/
+      modal/
+      ...
+    form/
+    ...
+  stories/
+  tailwind.css
+  index.ts
+```
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Make your changes and commit: `git commit -m 'Add new feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a pull request.
+
+## Scripts
+
+- `npm run dev` – Start development server
+- `npm run build` – Build the library
+- `npm run storybook` – Launch Storybook
+- `npm run lint` – Lint the codebase
+
+## License
+
+[MIT](LICENSE)
+
+---
+
+Made with ❤️ by the MatchHat team.
